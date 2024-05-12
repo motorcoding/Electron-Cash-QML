@@ -34,6 +34,7 @@ import threading
 import time
 import traceback
 import weakref
+import subprocess
 from decimal import Decimal as PyDecimal  # Qt 5.12 also exports Decimal
 from functools import partial
 from collections import OrderedDict
@@ -596,7 +597,9 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             return
         self.gui_object.new_window(filename)
 
-
+    def open_qml_window(self):
+        subprocess.Popen(["python3", "electroncash_qml_gui/home.py"])
+        print("the new QML UI")
     def backup_wallet(self):
         self.wallet.storage.write()  # make sure file is committed to disk
         path = self.wallet.storage.path
@@ -664,6 +667,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         file_menu = menubar.addMenu(_("&File"))
         self.recently_visited_menu = file_menu.addMenu(_("Open &Recent"))
         file_menu.addAction(_("&Open") + "...", self.open_wallet).setShortcut(QKeySequence.Open)
+        file_menu.addAction(_("&QML UI") + "...", self.open_qml_window)
         file_menu.addAction(_("&New/Restore") + "...", self.new_wallet).setShortcut(QKeySequence.New)
         file_menu.addAction(_("&Save Copy As") + "...", self.backup_wallet).setShortcut(QKeySequence.SaveAs)
         file_menu.addAction(_("&Delete") + "...", self.remove_wallet)
@@ -1114,8 +1118,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         self.token_history_list.update_labels()
         self.update_completions()
         self.labels_updated_signal.emit()
-        self.labels_need_update.clear() # clear flag
-
+        self.labels_need_update.clear() # clear flag    
     def create_history_tab(self):
         from .history_list import HistoryList
         self.history_list = l = HistoryList(self)

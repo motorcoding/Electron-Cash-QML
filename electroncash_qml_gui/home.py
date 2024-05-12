@@ -17,7 +17,7 @@ if __name__ == "__main__":
     data_holder.update_SizePerent(screen_height / 1115)
     engine.rootContext().setContextProperty("DataHolder", data_holder)
     # Load the QML file
-    engine.load(QUrl.fromLocalFile("home.qml"))
+    engine.load(QUrl.fromLocalFile("electroncash_qml_gui/home.qml"))
 
     if not engine.rootObjects():
         sys.exit(-1)

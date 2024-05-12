@@ -27,7 +27,7 @@ Rectangle {
            Image {
                width: 455 * requestmain.width / 1500
                height: 455 * requestmain.height / 850
-               source: "resource/request qr.png"
+               source: "../resource/request qr.png"
            }
            Column {
                width: 862 * requestmain.width / 1500
@@ -116,14 +116,14 @@ Rectangle {
                                Image {
                                    width: 20 * requestmain.height / 850
                                    height: 20 * requestmain.height / 850
-                                   source: "resource/BCH.png"
+                                   source: "../resource/BCH.png"
                                }
                            }
                        }
                        Image {
                            width: 18 * requestmain.height / 850
                            height: 18 * requestmain.height / 850
-                           source: "resource/exchange.png"
+                           source: "../resource/exchange.png"
                            anchors.verticalCenter: parent.verticalCenter
                        }
                        Rectangle {
@@ -157,7 +157,7 @@ Rectangle {
                                Image {
                                    width: 20 * requestmain.height / 850
                                    height: 20 * requestmain.height / 850
-                                   source: "resource/USD.png"
+                                   source: "../resource/USD.png"
                                }
                            }
                        }
@@ -212,7 +212,7 @@ Rectangle {
                        indicator: Image {
                            width: 11
                            height: 4
-                           source: "resource/dropdown.png"
+                           source: "../resource/dropdown.png"
                            anchors.right: parent.right
                            anchors.rightMargin: 20 * requestmain.width / 1500
                            anchors.verticalCenter: parent.verticalCenter
@@ -254,7 +254,7 @@ Rectangle {
                        indicator: Image {
                            width: 11
                            height: 4
-                           source: "resource/dropdown.png"
+                           source: "../resource/dropdown.png"
                            anchors.right: parent.right
                            anchors.rightMargin: 20 * requestmain.width / 1500
                            anchors.verticalCenter: parent.verticalCenter

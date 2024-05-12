@@ -395,7 +395,7 @@ Window {
 
                     function loadSendPage() {
                         clearCurrentPage();
-                        var component = Qt.createComponent("send.qml");
+                        var component = Qt.createComponent("index/send.qml");
                         if (component.status === Component.Ready) {
                             var sourceItem = component.createObject(switchPage);
                             if (sourceItem === null) {
@@ -412,7 +412,7 @@ Window {
 
                     function loadRequestPage() {
                         clearCurrentPage();
-                        var component = Qt.createComponent("request.qml");
+                        var component = Qt.createComponent("index/request.qml");
                         if (component.status === Component.Ready) {
                             var sourceItem = component.createObject(switchPage);
                             if (sourceItem === null) {
